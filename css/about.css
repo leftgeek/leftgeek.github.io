@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+.aboutitem{
+	padding:0px 5px 0px 5px;
+}
+.aboutitem div{
+  line-height: 160%;
+}
+
+#about_avatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.about_title{
+  line-height: 100%;
+  padding: 0px 10px 0px 10px;
+}
+
+.about_content{
+  text-indent: 32px;
+  padding: 0px 10px 0px 10px;
+}
+
+
+#about_detail{
+  padding: 0px 0px 0px 10px;
+}
