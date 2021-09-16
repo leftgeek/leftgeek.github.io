@@ -77,14 +77,81 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="blogcontent">TODO:</div>
+                        <div class="blogcontent">
+                            ​<p>　　就在上个月，我的博客网站 leftgeek.com 云服务器到期了。由于续费价格感人，以及博客中不便记录工作相关的技术沉淀，就放弃了续费的打算。
+                            </p>
+                            ​<p>　　而在前几天，因为不想受制于工作电脑的安全限制，装了台个人电脑。终于可以放心大胆地继续自己在GitHub上的小项目，这才意识到可以将博客网站的内容搬到GitHub Pages上来。</p>
+                            <img src="resource/github-pages.png" align="center" />
+                            <div align="center">图0 GitHub pages提供的静态网站托管服务</div>
+
+                            <p>主要包含三个步骤：</p>
+                            <ul>
+                                <li>把之前的博客网站内容转成静态网页</li>
+                                <li>将博客域名指向GitHub Pages静态网站</li>
+                                <li>将网站从原先的 “http” 升级成了 “https”</li>
+                            </ul>
+
+                            <p>这里就是简单地记录这件事，无任何技术含量。</p>
+
+                            <h4>1、网站内容静态化</h4>
+
+                            <p>这应该是最枯燥的事情了。本来网站内容都是从数据库中实时获取的，现在要转成静态网页，意味着要把数据写死在网页中的。</p>
+
+                            <p>方法十分简单：以（分类、标签、文章）id号建立相应的静态网页文件，并在其中填上对应的数据库内容，访问时直接链接到相应目录下的静态网页文件即可。</p>
+
+                            <img src="resource/leftgeek-static-files.png" align="center" />
+
+                            <div align="center">图1-1 网站的静态网页目录树</div>
+
+                            <p>网站里面本来就有个用HTML5写的俄罗斯广块游戏，由于本来就是静态网页，因此不需要做任何更改，依然可以跑在GitHub Pages网站中。但是原博客的后台管理系统在静态化的过程中被移除了，毕竟不再需要。</p>
+
+                            <img src="resource/leftgeek-game.png" align="center" />
+                            <div align="center">图1-2 网站上的俄罗斯方块游戏依然可以正常运行</div>
+
+                            <p>本来打算写个脚本减少重复的劳动，但是看到总共就几篇博文，直接手动复制粘贴速度更快。</p>
+
+
+                            <h4>2、将个人域名指向GitHub Pages地址</h4>
+                            <p>先创建和自己GitHub帐户同名，且后缀为“.github.io”的仓库。然后把自己静态化后的网站源码传上去，该仓库名将作为网站的实际访问地址。</p>
+
+                            <img src="resource/leftgeek-github-create.png" align="center" />
+                            <div align="center">图2-1 创建GitHub Pages仓库（由于我已经创建过了，所以会有警告）</div>
+
+                            <p>然后在自己的域名后台管理中，将自己的域名指向刚刚创建的GitHub Page仓库名。</p>
+
+                            <img src="resource/leftgeek-aliyun-cname-setting-mark.png" align="center" />
+                            <div align="center">图2-2 将自己的域名指向GitHub Page仓库名</div>
+
+                            <p>再在GitHub Pages的网站根目录下创建一个名为“CNAME”的文件（即leftgeek.github.io/CNAME），其内容为自己的域名（即leftgeek.com），使该GitHub Pages网址也指向leftgeek.com</p>
+
+                            <p>这样过一会儿就能通过 http://leftgeek.com 访问到该GitHub Pages网站了，但是这个网站是http的，并不安全，还要再设置下将其变为https</p>
+
+
+<h4>3、从http升级到https</h4>
+
+<p>现在几乎所有网站都是https协议的，以至于访问http开头的网站会受到浏览器的提醒甚至警告。</p>
+
+
+                            <img src="resource/leftgeek-http.png" align="center" />
+                            <div align="center">图3-1 访问http打头的网站会被警告（这里http://被浏览器隐藏了）</div>
+
+                            <img src="resource/leftgeek-https.png" align="center" />
+                            <div align="center">图3-2 升级到https后浏览器会显示一把锁（网站前面是https://）</div>
+
+                            <p>而升级https的方法非常简单，直接在GitHub Pages网站项目的设置中开启“Enforce HTTPS” ，一会儿之后就会发现绿框中网站的访问地址变成https://了：</p>
+
+                            <img src="resource/leftgeek-github-https-setting-mark.png" align="center" />
+                            <div align="center">图3-3 在GitHub Pages设置中打开https</div>
+
+                            <p>目前 leftgeek.com 这个域名还没到期，就算到期也会续费下去。所以只要GitHub Pages这个功能一直在，leftgeek.com也会一直在。当然，别指望有稳定的内容更新，我擅长出其不意（nao yan zi）。</p>
+                        </div>
                     </div>
                     <div class="state">
                         (转载本站文章，请注明出处)
                     </div>
                     <div id="otherarticle">
                         <span class="left">&laquo;上一篇:
-                            <a href="article/2.html">八年后，LeftGeek的（短暂）回归</a>
+                            <a href="article/3.html">俄罗斯方块游戏-基于贪心策略的简易AI实现</a>
                         </span>
                         <span class="right">下一篇:
                             无
@@ -97,6 +164,7 @@
                         </div>
                         <ul>
                             <li><a href="article/2.html">八年后，LeftGeek的（短暂）回归</a></li>
+                            <li><a href="article/1.html">lefthacker.com诞生记</a></li>
                         </ul>				
                     </div>
                     <div class="headtitle">
@@ -298,6 +366,9 @@
                           </div>
                           <div class="boxcontent post_list">
                               <ul>
+                                  <li>
+                                      <a href="article/4.html">GitHub Pages - leftgeek.com的归宿</a>
+                                  </li>
                                   <li>
                                       <a href="article/3.html">俄罗斯方块游戏-基于贪心策略的简易AI实现</a>
                                   </li>
