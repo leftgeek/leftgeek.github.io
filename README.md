@@ -1,0 +1,1 @@
+The static version of my website https://leftgeek.com/
